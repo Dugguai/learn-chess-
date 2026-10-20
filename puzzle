@@ -1,0 +1,8 @@
+async function fetchPuzzle() {
+  const res = await fetch("https://lichess.org/api/puzzle/next");
+  const data = await res.json();
+  // data.puzzle.fen: प्रारंभिक स्थिति
+  // data.puzzle.solution: UCI चाल सरणी, जैसे ["e2e4", "e7e5", "g1f3"]
+  // data.puzzle.themes: ["fork", "pin"] जैसे थीम
+  return data.puzzle;
+}
